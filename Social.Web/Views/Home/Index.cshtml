@@ -4,16 +4,7 @@
 <div class="hero-unit">
     <h1>SaaS Social</h1>
     <p>
-        @if (@ViewBag.is_authenticated)
-{
-    <text>
-        Ciao, @ViewBag.social_state.Me.name . Adesso sei autenticato. Se vuoi disconnetterti, premi <a href="@Url.Action("Logoff")" class="btn btn-danger">qui</a>
-    </text>
-} else {
-    <text>
-        Non sei ancora autenticato. Per farlo, premi <a href="@Url.Action("Logon")" class="btn btn-primary">qui</a>
-    </text>
-}
-
+        Ciao! Per entrare in Facebook, premi <a href="@Url.Action("Index", "Facebook")" class="btn btn-primary">qui</a><br />
+        Per entrare in Live, premi <a href="@Url.Action("Index", "Live")" class="btn btn-primary">qui</a>
     </p>
 </div>

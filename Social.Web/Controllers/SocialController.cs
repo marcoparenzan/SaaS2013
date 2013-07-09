@@ -44,6 +44,8 @@ namespace Social.Web.Controllers
             }
         }
 
+        protected abstract string SocialApplicationConfiguration { get; }
+
         private SocialApplication _socialApplication;
 
         protected SocialApplication SocialApplication
@@ -54,8 +56,7 @@ namespace Social.Web.Controllers
                 {
                     _socialApplication =
                         SocialApplication.Parse(
-                            ConfigurationManager
-                            .AppSettings["SocialApplication"]
+                            SocialApplicationConfiguration
                         );
                 }
                 return _socialApplication;

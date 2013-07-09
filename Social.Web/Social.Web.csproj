@@ -230,6 +230,9 @@
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Facebook\Index.cshtml" />
+    <Content Include="Views\Live\Index.cshtml" />
+    <Content Include="Views\Shared\_StatePartial.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

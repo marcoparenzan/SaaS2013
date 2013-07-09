@@ -1,14 +1,28 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-
 using Social.Web.Models;
 
 namespace Social.Web.Controllers
 {
-    public abstract class FacebookController : SocialController
+    public class FacebookController : SocialController
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        protected override string SocialApplicationConfiguration
+        {
+            get
+            {
+                return ConfigurationManager
+                          .AppSettings["FacebookApplication"];
+            }
+        }
+
         public ActionResult LogOn()
         {
             var url_referrer = Request.UrlReferrer.ToString();

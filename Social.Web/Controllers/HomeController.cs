@@ -6,10 +6,11 @@ using System.Web.Mvc;
 
 namespace Social.Web.Controllers
 {
-    public class HomeController : LiveController
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {
+            @ViewBag.is_authenticated = false;
             return View();
         }
     }

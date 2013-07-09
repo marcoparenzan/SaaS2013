@@ -1,14 +1,28 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-
 using Social.Web.Models;
 
 namespace Social.Web.Controllers
 {
-    public abstract class LiveController : SocialController
+    public class LiveController : SocialController
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        protected override string SocialApplicationConfiguration
+        {
+            get
+            {
+                return ConfigurationManager
+                          .AppSettings["LiveApplication"];
+            }
+        }
+        
         public ActionResult LogOn()
         {
             var url_referrer = Request.UrlReferrer.ToString();
